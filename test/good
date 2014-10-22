@@ -1,0 +1,12 @@
+This is a good test text file.
+
+//DEV//
+This is some development line to be removed.
+//DEV//
+Some more text to stay.
+
+	//DEV//
+	And some more development lines
+	that should get gone.
+	//DEV//
+The last staying text line.

@@ -1,0 +1,72 @@
+About
+=====
+
+Remove two lines containing "//DEV//" (the marker lines) and
+everything in between them from specified text files.
+
+Note that the file, if marker lines count is not 0 and is even, is
+modified in place.
+
+Use
+===
+
+Any text file for any purpose may be used. User of the program adds
+paired lines with markers to text file and may erase them and anything
+in between them (e.g. debugging code) later on.
+
+Examples
+========
+
+Plain Text
+----------
+
+### Before
+
+This is a line that should be kept.
+
+//DEV//
+This is a line to be removed.
+//DEV//
+And this is a line to be kept as well.
+
+### After
+
+This is a line that should be kept.
+
+And this is a line to be kept as well.
+
+C Code
+------
+
+### Before
+
+#include <stdio.h>
+
+int main(void)
+{
+        printf("hello world\n");
+        /*//DEV// Print some development information. */
+        fprintf(stderr, "development information\n");
+        /*//DEV//*/
+        return 0;
+}
+
+### After
+
+#include <stdio.h>
+
+int main(void)
+{
+        printf("hello world\n");
+        return 0;
+}
+
+Copyright
+=========
+
+Copyright © 2014 Donatas Klimašauskas
+
+License
+=======
+
+This program is free software. Its GPLv3+ license is at the COPYING file.
